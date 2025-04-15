@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <title>PhimHayZ - Đề Xuất Phim gì?</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <div class="header-top">
+        <div class="header-left">
+          <div class="logo">
+            <a href="#">PhimHayZ</a>
+          </div>
+          <a href="#focus">Trang chủ</a>
+          <a href="#dexuathot">Đề xuất hot</a>
+        </div>
+        <div class="header-right">
+          <div class="search-bar">
+            <input type="text" placeholder="Tìm kiếm..." />
+            <p>|</p>
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </div>
+          <div class="header-right-item">
+            <button>
+              <i class="fa-solid fa-circle-plus"></i>
+            </button>
+            <p>Thuê Phim</p>
+          </div>
+          <div  class="header-right-item">
+            <button>
+              <i class="fa-solid fa-circle-user"></i>
+            </button>
+            <p>Của Tôi</p>
+          </div>
+        </div>
+      </div>
+      <div class="header-bot">
+        <div class="nav-item">
+          <a>Thể Loại</a>
+          <ul class="dropdown">
+            <li><span>Hành Động</span></li>
+            <li><span>Hài Hước</span></li>
+            <li><span>Kinh Dị</span></li>
+            <li><span>Phiêu Lưu</span></li>
+            <li><span>Khoa Học Viễn Tưởng</span></li>
+            <li><span>Thần Thoại</span></li>
+            <li><span>Hoạt Hình</span></li>
+            <li><span>Chiến Tranh</span></li>
+            <li><span>Âm Nhạc</span></li>
+          </ul>
+        </div>
+        <div class="nav-item">
+          <a>Quốc Gia</a>
+          <ul class="dropdown">
+            <li><span>Việt Nam</span></li>
+            <li><span>Hàn Quốc</span></li>
+            <li><span>Nhật Bản</span></li>
+            <li><span>Mỹ</span></li>
+          </ul>
+        </div>
+        <div class="nav-item">
+          <a>Phim Bộ</a>
+          <ul class="dropdown">
+            <li><span>Phim Bộ Hàn Quốc</span></li>
+            <li><span>Phim Bộ Trung Quốc</span></li>
+            <li><span>Phim Bộ Mỹ</span></li>
+          </ul>
+        </div>
+        <div class="nav-item">
+          <a>Phim Lẻ</a>
+          <ul class="dropdown">
+            <li><span>Phim Lẻ Hành Động</span></li>
+            <li><span>Phim Lẻ Hài Hước</span></li>
+            <li><span>Phim Lẻ Kinh Dị</span></li>
+          </ul>
+        </div>
+      </div>
+        
+    </header>
+    <section class="focus" id="focus">
+      <div class="controls">
+        <button class="control control-left">
+          <i class="fa-solid fa-chevron-left"></i>
+        </button>
+        <button class="control control-right">
+          <i class="fa-solid fa-chevron-right"></i>
+        </button>
+      </div>
+      <div class="focus-content">
+        <!-- <img src="./assents/icon.png" alt="One Piece Logo" class="focus-icon" /> -->
+        <span class="content1"></span>
+        <span class="content2"></span>
+        <div class="focus-info"></div>
+        <h1 class="focus-title"></h1>
+        <p class="focus-description"></p>
+        <div class="focus-actions">
+          <button class="play-button">
+            <i class="fa-solid fa-play"></i>
+          </button>
+          <button class="save-button">
+            <i class="fa-regular fa-bookmark"></i>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <div class="container">
+      <section class="dexuathot" id="dexuathot">
+        <h2>Đề xuất hot</h2>
+        <div class="dexuathot1" id="dexuathot2"></div>
+      </section>
+      <section class="dexuathot" id="dexuathot">
+        <h2>Đề xuất phim mới</h2>
+        <div class="dexuathot1" id="dexuathot3"></div>
+    </div>
+    <script src="./index.js"></script>
+  </body>
+</html>
