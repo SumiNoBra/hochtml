@@ -41,24 +41,91 @@ const focusDataArray = [
 
 const dexuathotdata = [
   {
-    name: "Blue Lock",
-    img: "./assents/bluelock.jpeg",
+    name: "",
+    img: "./assents/sololv.jpeg",
   },
   {
-    name: "Naruto",
+    name: "",
     img: "./assents/naruto.webp",
   },
   {
-    name: "Squitgame",
-    img: "./assents/sqiutgame.jpg",
+    name: "",
+    img: "./assents/dragonball.webp",
   },
   {
-    name: "Doraemon",
+    name: "",
     img: "./assents/doremon.jpg",
   },
   {
-    name: "POKEMON",
+    name: "",
     img: "./assents/pokemon.jpg",
+  },
+];
+
+const dexuathotdata1 = [
+  {
+    name: "",
+    img: "./assents/haikyuu.webp",
+  },
+  {
+    name: "",
+    img: "./assents/bluelock.jpeg",
+  },
+  {
+    name: "",
+    img: "./assents/",
+  },
+  {
+    name: "",
+    img: "./assents/",
+  },
+  {
+    name: "",
+    img: "./assents/",
+  },
+];
+const dexuathotdata2 = [
+  {
+    name: "",
+    img: "./assents/chatoi.webp",
+  },
+  {
+    name: "",
+    img: "./assents/diadao.webp",
+  },
+  {
+    name: "",
+    img: "./assents/khicuoc.jpg",
+  },
+  {
+    name: "",
+    img: "./assents/vuon-sao-bang-2009-big.jpg",
+  },
+  {
+    name: "",
+    img: "./assents/sqiutgame.jpg",
+  },
+];
+const dexuathotdata3 = [
+  {
+    name: "",
+    img: "./assents/",
+  },
+  {
+    name: "",
+    img: "./assents/",
+  },
+  {
+    name: "",
+    img: "./assents/",
+  },
+  {
+    name: "",
+    img: "./assents/kuroi.avif",
+  },
+  {
+    name: "",
+    img: "./assents/horimiya.jpg",
   },
 ];
 
@@ -127,7 +194,9 @@ autochangeimg(controlleft, controlright);
 ////////////////////////////////////////////////////////////////////////////////
 const dexuathot = document.querySelector(".container .dexuathot #dexuathot2");
 const dexuathot1 = document.querySelector(".container .dexuathot #dexuathot3");
-function renderDexuathot(dexuathotdata,dexuathot) {
+const dexuathot2 = document.querySelector(".container .dexuathot #dexuathot4");
+const dexuathot3 = document.querySelector(".container .dexuathot #dexuathot5");
+function renderDexuathot(dexuathotdata, dexuathot) {
   dexuathot.innerHTML = "";
   dexuathotdata.forEach((item, index) => {
     const DivCha = document.createElement("div");
@@ -135,7 +204,7 @@ function renderDexuathot(dexuathotdata,dexuathot) {
     const itemDiv = document.createElement("div");
     itemDiv.classList.add("item");
     itemDiv.style.backgroundImage = `url(${item.img})`;
-    itemDiv.innerHTML=`
+    itemDiv.innerHTML = `
     <p>Đang phát sóng</p>
     `;
     const name = document.createElement("p");
@@ -148,6 +217,7 @@ function renderDexuathot(dexuathotdata,dexuathot) {
     }
   });
 }
-renderDexuathot(dexuathotdata,dexuathot);
-renderDexuathot(dexuathotdata,dexuathot1);
-
+renderDexuathot(dexuathotdata, dexuathot);
+renderDexuathot(dexuathotdata1, dexuathot1);
+renderDexuathot(dexuathotdata2, dexuathot2);
+renderDexuathot(dexuathotdata3, dexuathot3);
