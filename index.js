@@ -224,16 +224,28 @@ function renderDexuathot(dexuathotdata, dexuathot) {
   dexuathotdata.forEach((item, index) => {
     const DivCha = document.createElement("div");
 
-    const itemDiv = document.createElement("div");
+    const DivItem = document.createElement("div");
+    DivItem.classList.add("item");
+    DivItem.style.backgroundImage = `url(${item.img})`;
     const p = document.createElement("p");
     p.innerText = item.episodes;
-    itemDiv.classList.add("item");
-    itemDiv.style.backgroundImage = `url(${item.img})`;
-    itemDiv.appendChild(p);
+    p.classList.add("item-episodes");
+    
+    DivItem.appendChild(p);
     const name = document.createElement("p");
     name.classList.add("item-name");
     name.textContent = item.name;
-    DivCha.appendChild(itemDiv);
+
+    const description = document.createElement("p");
+    description.classList.add("movie-description");
+    description.innerHTML = `
+            ${item.episodes}
+            <br><br />
+            Hồng Kông, thành phố an toàn nhất châu Á và cũng là trung tâm tài chính quốc tế nổi tiếng trên thế giới. Bên phải lối tài của thành phố này được đặc trưng là
+             "Tài chính, Bất động sản, Giáo dục, Tư pháp", tạo0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 nên...
+        `;
+    DivItem.appendChild(description);
+    DivCha.appendChild(DivItem);
     DivCha.appendChild(name);
     dexuathot.appendChild(DivCha);
   });

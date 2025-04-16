@@ -101,11 +101,11 @@ header {
   align-items: center;
   gap: 20px;
 }
-.header-left a{
+.header-left a {
   font-size: 20px;
   transition: all 0.5s ease;
 }
-.header-left a:hover{
+.header-left a:hover {
   cursor: pointer;
   color: #00ff44;
 }
@@ -130,28 +130,28 @@ header {
   gap: 10px;
   border-radius: 10px;
 }
-.search-bar input{
+.search-bar input {
   padding: 15px 20px;
-  background-color: rgba(128, 128, 128, 0.0);
+  background-color: rgba(128, 128, 128, 0);
   outline: none;
   color: white;
   border: none;
   font-size: 16px;
 }
 .search-bar input::placeholder {
-  color: white; 
-  opacity: 0.8; 
+  color: white;
+  opacity: 0.8;
 }
-.header-right-item{
+.header-right-item {
   text-align: center;
   padding: 5px;
   margin-top: 15px;
 }
-.header-right-item p{
+.header-right-item p {
   font-size: 14px;
-  padding:5px;
+  padding: 5px;
 }
-.header-right-item:hover{
+.header-right-item:hover {
   background-color: rgba(255, 255, 255, 0.2);
   border-radius: 5px;
 }
@@ -277,7 +277,7 @@ header {
   align-items: center;
   justify-content: center;
 }
-.play-button:hover{
+.play-button:hover {
   opacity: 0.6;
 }
 
@@ -294,7 +294,7 @@ header {
   align-items: center;
   justify-content: center;
 }
-.save-button:hover{
+.save-button:hover {
   opacity: 0.6;
 }
 /* container///////////////////////////////////////////////////////////////////////////////////////// */
@@ -323,27 +323,45 @@ header {
   border-radius: 5px;
   display: flex;
   align-items: center;
-  padding: 0 20px;
   align-items: flex-end;
   padding-bottom: 10px;
   background-image: url("./assents/bluelock.jpeg");
   background-size: cover;
   background-position: center;
+  position: relative;
 }
-.dexuathot1 .item p{
+.dexuathot1 .item .item-episodes {
   width: 100%;
   white-space: nowrap;
   overflow: hidden;
-  text-overflow:ellipsis;
+  text-overflow: ellipsis;
+  padding: 0 20px;
 }
 .dexuathot1 .item-name {
   font-size: 20px;
   font-weight: bold;
 }
 
-.dexuathot1 .item:hover {
-  transform: scale(1.15);
-  transition: transform 0.3s ease;
-  box-shadow: 0 5px 20px rgba(255, 255, 255, 0.2);
+.dexuathot1 .item:hover .movie-description {
+  opacity: 1;
+  bottom: 0;
+}
+.dexuathot1 .item:hover .item-episodes{
+  display: none;
+}
+.dexuathot1 .item .movie-description {
+  overflow: hidden;
+  position: absolute;
+  bottom: -10px;
+  height: 60%;
+  left: 0;
+  padding: 20px;
+  background:  rgba(0, 0, 0, 0.6);
+  color: white;
+  font-size: 12px;
+  opacity: 0;
+  transition: all 0.3s ease;
+  width: 100%;
+  box-sizing: border-box;
 }
 
