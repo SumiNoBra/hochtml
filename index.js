@@ -41,91 +41,114 @@ const focusDataArray = [
 
 const dexuathotdata = [
   {
-    name: "",
+    name: "Solo Leveling",
     img: "./assents/sololv.jpeg",
+    episodes: "Season 1: 12 tập, Season 2 đang chiếu",
   },
   {
-    name: "",
+    name: "Naruto",
     img: "./assents/naruto.webp",
+    episodes: "Naruto: 220 tập, Shippuden: 500 tập, Boruto: đang chiếu",
   },
   {
-    name: "",
+    name: "Dragon Ball",
     img: "./assents/dragonball.webp",
+    episodes:
+      "Dragon Ball: 153 tập, Z: 291, GT: 64, Super: 131, Daima: sắp chiếu",
   },
   {
-    name: "",
+    name: "Doraemon",
     img: "./assents/doremon.jpg",
+    episodes: "Hơn 2000 tập (đang phát sóng)",
   },
   {
-    name: "",
+    name: "Pokemon",
     img: "./assents/pokemon.jpg",
+    episodes: "Hơn 1200 tập (nhiều season + movie)",
   },
 ];
 
 const dexuathotdata1 = [
   {
-    name: "",
+    name: "Haikyuu",
     img: "./assents/haikyuu.webp",
+    episodes: "Mùa 1: 25, Mùa 2: 25, Mùa 3: 10, Mùa 4: 25, Movie: đang ra rạp",
   },
   {
-    name: "",
+    name: "Bluelock",
     img: "./assents/bluelock.jpeg",
+    episodes: "Mùa 1: 24 tập, Movie: Episode Nagi (2024), Mùa 2: đang chiếu",
   },
   {
-    name: "",
-    img: "./assents/",
+    name: "Attack on Titan",
+    img: "./assents/aot.jpg",
+    episodes: "4 mùa, 87 tập + special cuối (đã kết thúc)",
   },
   {
-    name: "",
-    img: "./assents/",
+    name: "One Piece",
+    img: "./assents/onepiece.jpg",
+    episodes: "Hơn 1100 tập, nhiều movie",
   },
   {
-    name: "",
-    img: "./assents/",
+    name: "Jujutsu Kaisen",
+    img: "./assents/jujutsu.jpg",
+    episodes: "Season 1: 24 tập, Season 2: 23 tập, Movie 0",
   },
 ];
+
 const dexuathotdata2 = [
   {
-    name: "",
+    name: "Cha Tôi",
     img: "./assents/chatoi.webp",
+    episodes: "Phim Việt, đang chiếu (2025)",
   },
   {
-    name: "",
+    name: "Địa Đạo",
     img: "./assents/diadao.webp",
+    episodes: "Phim Việt, đang chiếu (2025)",
   },
   {
-    name: "",
+    name: "Ký Ức Cuộc Chiến",
     img: "./assents/khicuoc.jpg",
+    episodes: "Phim lẻ",
   },
   {
-    name: "",
+    name: "Vườn Sao Băng",
     img: "./assents/vuon-sao-bang-2009-big.jpg",
+    episodes: "25 tập (Hàn Quốc - 2009)",
   },
   {
-    name: "",
+    name: "Squid Game",
     img: "./assents/sqiutgame.jpg",
+    episodes: "Season 1: 9 tập, Season 2: sắp ra mắt",
   },
 ];
+
 const dexuathotdata3 = [
   {
-    name: "",
-    img: "./assents/",
+    name: "Tokyo Revengers",
+    img: "./assents/tokyo-revengers.jpg",
+    episodes: "3 mùa, tổng 50+ tập",
   },
   {
-    name: "",
-    img: "./assents/",
+    name: "Your Name",
+    img: "./assents/yourname.jpg",
+    episodes: "Movie (1h 46 phút)",
   },
   {
-    name: "",
-    img: "./assents/",
+    name: "A Silent Voice",
+    img: "./assents/koenokatachi.jpg",
+    episodes: "Movie (2h 10 phút)",
   },
   {
-    name: "",
+    name: "Kuroi",
     img: "./assents/kuroi.avif",
+    episodes: "Anime ngắn",
   },
   {
-    name: "",
+    name: "Horimiya",
     img: "./assents/horimiya.jpg",
+    episodes: "Season 1: 13 tập, Season 2: 13 tập",
   },
 ];
 
@@ -202,19 +225,17 @@ function renderDexuathot(dexuathotdata, dexuathot) {
     const DivCha = document.createElement("div");
 
     const itemDiv = document.createElement("div");
+    const p = document.createElement("p");
+    p.innerText = item.episodes;
     itemDiv.classList.add("item");
     itemDiv.style.backgroundImage = `url(${item.img})`;
-    itemDiv.innerHTML = `
-    <p>Đang phát sóng</p>
-    `;
+    itemDiv.appendChild(p);
     const name = document.createElement("p");
+    name.classList.add("item-name");
     name.textContent = item.name;
     DivCha.appendChild(itemDiv);
     DivCha.appendChild(name);
     dexuathot.appendChild(DivCha);
-    if ((index + 1) % 6 === 0) {
-      return;
-    }
   });
 }
 renderDexuathot(dexuathotdata, dexuathot);

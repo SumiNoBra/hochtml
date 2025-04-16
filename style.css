@@ -305,7 +305,7 @@ header {
   right: 0;
 }
 .dexuathot {
-  margin: 0 110px;
+  margin: 30px 110px;
 }
 .dexuathot1 {
   /* opacity: 0.3; */
@@ -330,12 +330,19 @@ header {
   background-size: cover;
   background-position: center;
 }
+.dexuathot1 .item p{
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow:ellipsis;
+}
 .dexuathot1 .item-name {
-  font-size: 16px;
+  font-size: 20px;
   font-weight: bold;
 }
+
 .dexuathot1 .item:hover {
-  transform: scale(1.05);
+  transform: scale(1.15);
   transition: transform 0.3s ease;
   box-shadow: 0 5px 20px rgba(255, 255, 255, 0.2);
 }
