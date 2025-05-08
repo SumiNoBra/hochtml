@@ -240,6 +240,7 @@
 @media (max-width: 577px) {
   .main-header{
     height: 8vh;
+    padding: 0;
   }
   .main-header .navbar{
     padding-top: 0;
