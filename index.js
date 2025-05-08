@@ -1,11 +1,7 @@
-const focusImg = document.getElementsByClassName("focus");
-const focusContent = document.querySelector(".focus-content");
-
 // data///////////////////////////////////////////////////////////////////////////////
 
 const focusDataArray = [
   {
-    // IconSrc: "./assents/icon.png",
     ImgUrl: "./assents/thousand-sunny-one-piece.jpg",
     content1: "Đang phát sóng",
     content2: "Top 1",
@@ -16,7 +12,6 @@ const focusDataArray = [
       "One Piece (Đảo Hải Tặc) - Monkey D. Luffy và hành trình khám phá bí mật của kho báu One Piece, trở thành Vua Hải Tặc.",
   },
   {
-    // IconSrc: "./assents/icon.png",
     ImgUrl: "./assents/SpiritedAway.avif",
     content1: "Mới cập nhật",
     content2: "Top 2",
@@ -27,7 +22,6 @@ const focusDataArray = [
       "Spirited Away - Câu chuyện về cô bé Chihiro lạc vào thế giới linh hồn và hành trình tìm đường trở về.",
   },
   {
-    // IconSrc: "./assents/icon.png",
     ImgUrl: "./assents/yourname.png",
     content1: "Hot nhất tuần",
     content2: "Top 3",
@@ -39,116 +33,155 @@ const focusDataArray = [
   },
 ];
 
-const dexuathotdata = [
+const anime = [
   {
     name: "Solo Leveling",
     img: "./assents/sololv.jpeg",
     episodes: "Season 1: 12 tập, Season 2 đang chiếu",
+    description:
+      "Một thợ săn yếu ớt vươn lên đỉnh cao sau khi nhận được sức mạnh đặc biệt.",
   },
   {
     name: "Naruto",
     img: "./assents/naruto.webp",
     episodes: "Naruto: 220 tập, Shippuden: 500 tập, Boruto: đang chiếu",
+    description:
+      "Hành trình trở thành Hokage của cậu bé ninja mang trong mình Cửu Vĩ.",
   },
   {
     name: "Dragon Ball",
     img: "./assents/dragonball.webp",
     episodes:
       "Dragon Ball: 153 tập, Z: 291, GT: 64, Super: 131, Daima: sắp chiếu",
+    description: "Cuộc phiêu lưu bất tận của Songoku và những người bạn.",
   },
   {
     name: "Doraemon",
     img: "./assents/doremon.jpg",
     episodes: "Hơn 2000 tập (đang phát sóng)",
+    description:
+      "Chú mèo máy từ tương lai giúp Nobita vượt qua khó khăn trong cuộc sống.",
   },
   {
     name: "Pokemon",
     img: "./assents/pokemon.jpg",
     episodes: "Hơn 1200 tập (nhiều season + movie)",
+    description:
+      "Hành trình chinh phục các vùng đất và trở thành nhà huấn luyện Pokémon vĩ đại.",
   },
 ];
 
-const dexuathotdata1 = [
+const thethao = [
   {
     name: "Haikyuu",
     img: "./assents/haikyuu.webp",
     episodes: "Mùa 1: 25, Mùa 2: 25, Mùa 3: 10, Mùa 4: 25, Movie: đang ra rạp",
+    description:
+      "Haikyuu theo chân Hinata Shoyo chinh phục đam mê bóng chuyền dù có chiều cao khiêm tốn.",
   },
   {
     name: "Bluelock",
     img: "./assents/bluelock.jpeg",
     episodes: "Mùa 1: 24 tập, Movie: Episode Nagi (2024), Mùa 2: đang chiếu",
+    description:
+      "Bluelock là dự án tìm kiếm tiền đạo xuất sắc nhất Nhật Bản thông qua hệ thống đào tạo khắc nghiệt.",
   },
   {
     name: "Attack on Titan",
     img: "./assents/aot.jpg",
     episodes: "4 mùa, 87 tập + special cuối (đã kết thúc)",
+    description:
+      "Cuộc chiến sinh tồn giữa nhân loại và những Titan khổng lồ phá huỷ thế giới.",
   },
   {
     name: "One Piece",
-    img: "./assents/onepiece.jpg",
+    img: "./assents/onepiece.jpe",
     episodes: "Hơn 1100 tập, nhiều movie",
+    description:
+      "Monkey D. Luffy và băng Mũ Rơm phiêu lưu tìm kiếm kho báu One Piece huyền thoại.",
   },
   {
     name: "Jujutsu Kaisen",
-    img: "./assents/jujutsu.jpg",
+    img: "./assents/jujutsu.webp",
     episodes: "Season 1: 24 tập, Season 2: 23 tập, Movie 0",
+    description:
+      "Trận chiến giữa các chú thuật sư và lời nguyền độc ác để bảo vệ nhân loại.",
   },
 ];
 
-const dexuathotdata2 = [
+const chieurap = [
   {
     name: "Cha Tôi",
     img: "./assents/chatoi.webp",
     episodes: "Phim Việt, đang chiếu (2025)",
+    description:
+      "Một câu chuyện cảm động về tình cha con trong bối cảnh hiện đại.",
   },
   {
     name: "Địa Đạo",
     img: "./assents/diadao.webp",
     episodes: "Phim Việt, đang chiếu (2025)",
+    description:
+      "Khám phá hệ thống địa đạo bí mật trong chiến tranh và những câu chuyện chưa kể.",
   },
   {
     name: "Ký Ức Cuộc Chiến",
     img: "./assents/khicuoc.jpg",
     episodes: "Phim lẻ",
+    description:
+      "Một bộ phim chiến tranh tái hiện ký ức và hậu quả của chiến tranh lên con người.",
   },
   {
     name: "Vườn Sao Băng",
     img: "./assents/vuon-sao-bang-2009-big.jpg",
     episodes: "25 tập (Hàn Quốc - 2009)",
+    description:
+      "Câu chuyện tình học đường giữa cô gái nghèo và nhóm F4 giàu có nổi tiếng.",
   },
   {
     name: "Squid Game",
     img: "./assents/sqiutgame.jpg",
     episodes: "Season 1: 9 tập, Season 2: sắp ra mắt",
+    description:
+      "Cuộc chiến sinh tồn đẫm máu để giành lấy phần thưởng tiền tỷ trong trò chơi tử thần.",
   },
 ];
 
-const dexuathotdata3 = [
+const tinhcam = [
   {
     name: "Tokyo Revengers",
     img: "./assents/tokyo-revengers.jpg",
     episodes: "3 mùa, tổng 50+ tập",
+    description:
+      "Một thanh niên quay ngược thời gian để thay đổi quá khứ và cứu người mình yêu.",
   },
   {
     name: "Your Name",
-    img: "./assents/yourname.jpg",
+    img: "./assents/yourname1.png",
     episodes: "Movie (1h 46 phút)",
+    description:
+      "Một mối liên kết siêu nhiên kỳ lạ giữa hai con người ở hai nơi khác nhau.",
   },
   {
     name: "A Silent Voice",
-    img: "./assents/koenokatachi.jpg",
+    img: "./assents/koenokatachi.webp",
     episodes: "Movie (2h 10 phút)",
+    description:
+      "Hành trình chuộc lỗi của một chàng trai từng bắt nạt cô bé khiếm thính.",
   },
   {
     name: "Kuroi",
     img: "./assents/kuroi.avif",
     episodes: "Anime ngắn",
+    description:
+      "Một tác phẩm anime ngắn đầy cảm xúc và chiều sâu, khám phá bóng tối nội tâm.",
   },
   {
     name: "Horimiya",
     img: "./assents/horimiya.jpg",
     episodes: "Season 1: 13 tập, Season 2: 13 tập",
+    description:
+      "Một chuyện tình nhẹ nhàng và đáng yêu giữa hai học sinh trung học tưởng chừng trái ngược.",
   },
 ];
 
@@ -157,12 +190,12 @@ const dexuathotdata3 = [
 const controlleft = document.querySelector(".focus .control-left");
 const controlright = document.querySelector(".focus .control-right");
 function autochangeimg(controlleft, controlright) {
+  const focusImg = document.getElementsByClassName("focus");
+  const focusContent = document.querySelector(".focus-content");
   let index = 0;
   function show() {
     const currentData = focusDataArray[index];
-    // const focusIcon = focusContent.querySelector(".focus-icon");
     focusImg[0].style.backgroundImage = `url(${currentData.ImgUrl})`;
-    // focusIcon.src = currentData.IconSrc;
     const content1 = focusContent.querySelector(".content1");
     const content2 = focusContent.querySelector(".content2");
     content1.textContent = currentData.content1;
@@ -181,31 +214,23 @@ function autochangeimg(controlleft, controlright) {
   show();
   function change() {
     internalId = setInterval(() => {
-      if (index >= focusDataArray.length - 1) {
-        index = -1;
-      }
-      index++;
+      index = (index + 1) % focusDataArray.length;
       show();
     }, 3000);
   }
   change();
   function handleButtonClickleft() {
     clearInterval(internalId);
-    if (index == 0) {
+    index = index - 1;
+    if (index < 0) {
       index = focusDataArray.length - 1;
-    } else {
-      index--;
     }
     show();
     change();
   }
   function handleButtonClickright() {
     clearInterval(internalId);
-    if (index == focusDataArray.length - 1) {
-      index = 0;
-    } else {
-      index++;
-    }
+    index = (index + 1) % focusDataArray.length;
     show();
     change();
   }
@@ -215,10 +240,14 @@ function autochangeimg(controlleft, controlright) {
 autochangeimg(controlleft, controlright);
 
 ////////////////////////////////////////////////////////////////////////////////
-const dexuathot = document.querySelector(".container .dexuathot #dexuathot2");
-const dexuathot1 = document.querySelector(".container .dexuathot #dexuathot3");
-const dexuathot2 = document.querySelector(".container .dexuathot #dexuathot4");
-const dexuathot3 = document.querySelector(".container .dexuathot #dexuathot5");
+const animeDiv = document.querySelector(".container-cus #anime");
+const thethaoDiv = document.querySelector(".container-cus #thethao");
+const chieurapDiv = document.querySelector(".container-cus  #chieurap");
+const tinhcamDiv = document.querySelector(".container-cus  #tinhcam");
+renderDexuathot(anime, animeDiv);
+renderDexuathot(thethao, thethaoDiv);
+renderDexuathot(chieurap, chieurapDiv);
+renderDexuathot(tinhcam, tinhcamDiv);
 function renderDexuathot(dexuathotdata, dexuathot) {
   dexuathot.innerHTML = "";
   dexuathotdata.forEach((item, index) => {
@@ -230,7 +259,7 @@ function renderDexuathot(dexuathotdata, dexuathot) {
     const p = document.createElement("p");
     p.innerText = item.episodes;
     p.classList.add("item-episodes");
-    
+
     DivItem.appendChild(p);
     const name = document.createElement("p");
     name.classList.add("item-name");
@@ -239,10 +268,9 @@ function renderDexuathot(dexuathotdata, dexuathot) {
     const description = document.createElement("p");
     description.classList.add("movie-description");
     description.innerHTML = `
-            ${item.episodes}
-            <br><br />
-            Hồng Kông, thành phố an toàn nhất châu Á và cũng là trung tâm tài chính quốc tế nổi tiếng trên thế giới. Bên phải lối tài của thành phố này được đặc trưng là
-             "Tài chính, Bất động sản, Giáo dục, Tư pháp", tạo0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 nên...
+            <strong>${item.name}</strong><br />
+            ${item.episodes}<br />
+            ${item.description ? `<em>${item.description}</em>` : ""}
         `;
     DivItem.appendChild(description);
     DivCha.appendChild(DivItem);
@@ -250,7 +278,3 @@ function renderDexuathot(dexuathotdata, dexuathot) {
     dexuathot.appendChild(DivCha);
   });
 }
-renderDexuathot(dexuathotdata, dexuathot);
-renderDexuathot(dexuathotdata1, dexuathot1);
-renderDexuathot(dexuathotdata2, dexuathot2);
-renderDexuathot(dexuathotdata3, dexuathot3);

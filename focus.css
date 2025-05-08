@@ -1,0 +1,159 @@
+.focus {
+  height: 90vh;
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+/*  Controls */
+.controls {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 50px;
+  transform: translateY(-50%);
+  z-index: 5;
+}
+
+.control {
+  width: 50px;
+  height: 50px;
+  border: none;
+  background-color: rgba(0, 0, 0, 0);
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.control:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.control i {
+  font-size: 30px;
+  color: white;
+}
+
+.focus-content {
+  padding: 0 110px;
+  position: relative;
+  z-index: 2;
+  max-width: 600px;
+}
+
+.content1 {
+  background-color: #19b11d;
+  color: white;
+  font-size: 15px;
+  padding: 5px 10px;
+  border-radius: 3px;
+  display: inline-block;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.content2 {
+  background-color: var(--gray-opa);
+  color: white;
+  font-size: 15px;
+  padding: 5px 10px;
+  border-radius: 3px;
+  display: inline-block;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.focus-info {
+  display: flex;
+  gap: 10px;
+  font-size: 14px;
+}
+
+.focus-info .over-rate {
+  color: #19b11d;
+  font-weight: bold;
+}
+
+.focus-title {
+  font-size: 20px;
+  margin: 20px 0;
+  font-weight: bold;
+}
+
+.focus-description {
+  font-size: 14px;
+  margin-bottom: 20px;
+  opacity: 0.9;
+  line-height: 1.5;
+  height: 100px;
+  overflow: hidden;
+}
+
+.focus-actions {
+  display: flex;
+  gap: 15px;
+}
+
+.focus-actions i {
+  font-size: 20px;
+}
+
+.play-button {
+  background-color: #19b11d;
+  color: white;
+  border: none;
+  padding: 20px;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.play-button:hover {
+  opacity: 0.6;
+}
+
+.save-button {
+  background-color: rgba(128, 128, 128, 0.6);
+  color: black;
+  border: none;
+  padding: 20px;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.save-button:hover {
+  opacity: 0.6;
+}
+@media (max-width:991px){
+  .focus{
+    height: 60vh;
+  }
+}
+@media (max-width: 767px) {
+  .focus{
+    margin-top: 10vh;
+    height: 50vh;
+  }
+}
+@media (max-width: 577px) {
+  .focus{
+    margin-top: 8vh;
+    height: 45vh;
+  }
+}
