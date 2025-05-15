@@ -1,5 +1,3 @@
-// data///////////////////////////////////////////////////////////////////////////////
-
 const focusDataArray = [
   {
     ImgUrl: "./assents/thousand-sunny-one-piece.jpg",
@@ -32,7 +30,6 @@ const focusDataArray = [
       "Your Name - Một câu chuyện tình yêu kỳ diệu giữa hai người xa lạ kết nối qua giấc mơ.",
   },
 ];
-
 const anime = [
   {
     name: "Solo Leveling",
@@ -184,66 +181,47 @@ const tinhcam = [
       "Một chuyện tình nhẹ nhàng và đáng yêu giữa hai học sinh trung học tưởng chừng trái ngược.",
   },
 ];
+const carouselInner = document.querySelector(".carousel-inner");
+focusDataArray.forEach((item, index) => {
+  const carouselItem = document.createElement("div");
+  carouselItem.className =
+    index === 0 ? "carousel-item active" : "carousel-item";
+  carouselItem.setAttribute("data-bs-interval", "5000");
+  carouselItem.innerHTML = `
+    <img
+      src="${item.ImgUrl}"
+      class="d-block w-100"
+      alt="${item.title}"
+    />
+    <div class="carousel-caption d-inline">
+      <span class="content1">${item.content1}</span>
+      <span class="content2">${item.content2}</span>
+      <div class="focus-info">
+        <span class="over-rate"><i class="fa-solid fa-star"></i> ${item.overrate}</span>
+        <span>|</span>
+        <span>TV</span>
+        <span>|</span>
+        <span>${item.info}</span>
+      </div>
+      <h1 class="focus-title">${item.title}</h1>
+      <p class="focus-description">${item.description}</p>
+      <div class="focus-actions">
+        <button class="play-button">
+          <i class="fa-solid fa-play"></i>
+        </button>
+        <button class="save-button">
+          <i class="fa-regular fa-bookmark"></i>
+        </button>
+      </div>
+    </div>
+  `;
+  carouselInner.appendChild(carouselItem);
+});
 
-//////////////////////////////////////////////////////////////////////////////////
-// autochnageimg
-const controlleft = document.querySelector(".focus .control-left");
-const controlright = document.querySelector(".focus .control-right");
-function autochangeimg(controlleft, controlright) {
-  const focusImg = document.getElementsByClassName("focus");
-  const focusContent = document.querySelector(".focus-content");
-  let index = 0;
-  function show() {
-    const currentData = focusDataArray[index];
-    focusImg[0].style.backgroundImage = `url(${currentData.ImgUrl})`;
-    const content1 = focusContent.querySelector(".content1");
-    const content2 = focusContent.querySelector(".content2");
-    content1.textContent = currentData.content1;
-    content2.textContent = currentData.content2;
-    const focusInfo = focusContent.querySelector(".focus-info");
-    focusInfo.innerHTML = `<span class="over-rate"><i class="fa-solid fa-star"></i> ${currentData.overrate}</span>
-              <span>|</span>
-              <span>TV</span>
-              <span>|</span>
-              <span>${currentData.info}</span>`;
-    const focusTitle = focusContent.querySelector(".focus-title");
-    focusTitle.textContent = currentData.title;
-    const focusDescription = focusContent.querySelector(".focus-description");
-    focusDescription.textContent = currentData.description;
-  }
-  show();
-  function change() {
-    internalId = setInterval(() => {
-      index = (index + 1) % focusDataArray.length;
-      show();
-    }, 3000);
-  }
-  change();
-  function handleButtonClickleft() {
-    clearInterval(internalId);
-    index = index - 1;
-    if (index < 0) {
-      index = focusDataArray.length - 1;
-    }
-    show();
-    change();
-  }
-  function handleButtonClickright() {
-    clearInterval(internalId);
-    index = (index + 1) % focusDataArray.length;
-    show();
-    change();
-  }
-  controlleft.addEventListener("click", handleButtonClickleft);
-  controlright.addEventListener("click", handleButtonClickright);
-}
-autochangeimg(controlleft, controlright);
-
-////////////////////////////////////////////////////////////////////////////////
-const animeDiv = document.querySelector(".container-cus #anime");
-const thethaoDiv = document.querySelector(".container-cus #thethao");
-const chieurapDiv = document.querySelector(".container-cus  #chieurap");
-const tinhcamDiv = document.querySelector(".container-cus  #tinhcam");
+const animeDiv = document.querySelector(" #anime");
+const thethaoDiv = document.querySelector(" #thethao");
+const chieurapDiv = document.querySelector("  #chieurap");
+const tinhcamDiv = document.querySelector("  #tinhcam");
 renderDexuathot(anime, animeDiv);
 renderDexuathot(thethao, thethaoDiv);
 renderDexuathot(chieurap, chieurapDiv);
@@ -251,30 +229,18 @@ renderDexuathot(tinhcam, tinhcamDiv);
 function renderDexuathot(dexuathotdata, dexuathot) {
   dexuathot.innerHTML = "";
   dexuathotdata.forEach((item, index) => {
-    const DivCha = document.createElement("div");
-
-    const DivItem = document.createElement("div");
-    DivItem.classList.add("item");
-    DivItem.style.backgroundImage = `url(${item.img})`;
-    const p = document.createElement("p");
-    p.innerText = item.episodes;
-    p.classList.add("item-episodes");
-
-    DivItem.appendChild(p);
-    const name = document.createElement("p");
-    name.classList.add("item-name");
-    name.textContent = item.name;
-
-    const description = document.createElement("p");
-    description.classList.add("movie-description");
-    description.innerHTML = `
-            <strong>${item.name}</strong><br />
-            ${item.episodes}<br />
-            ${item.description ? `<em>${item.description}</em>` : ""}
-        `;
-    DivItem.appendChild(description);
-    DivCha.appendChild(DivItem);
-    DivCha.appendChild(name);
-    dexuathot.appendChild(DivCha);
+    dexuathot.innerHTML += `
+    <div class="item col col-sm-6 col-md-4 col-lg-3">
+      <div class="movie" style="background-image: url('${item.img}')">
+        <p class="item-episodes">${item.episodes}</p>
+        <p class="movie-description">
+          <strong>${item.name}</strong><br />
+          ${item.episodes}<br />
+          ${item.description ? `<em>${item.description}</em>` : ""}
+        </p>
+      </div>
+      <p class="item-name">${item.name}</p>
+    </div>
+  `;
   });
 }

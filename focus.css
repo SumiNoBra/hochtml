@@ -1,73 +1,36 @@
-.focus {
-  height: 90vh;
-  width: 100%;
-  background-size: cover;
-  background-position: center;
-  position: relative;
+.carousel-item img {
+  height: 100vh;
+}
+
+.carousel-caption {
   display: flex;
-  align-items: center;
+  justify-items: flex-start;
+  bottom: 20%;
+  left: 10%;
 }
 
-/*  Controls */
-.controls {
-  position: absolute;
-  top: 50%;
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  padding: 0 50px;
-  transform: translateY(-50%);
-  z-index: 5;
+.carousel-control-prev,
+.carousel-control-next {
+  width: 8%;
 }
 
-.control {
-  width: 50px;
-  height: 50px;
-  border: none;
-  background-color: rgba(0, 0, 0, 0);
-  border-radius: 50%;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.control:hover {
-  background-color: rgba(255, 255, 255, 0.2);
-}
-
-.control i {
-  font-size: 30px;
+.content1,
+.content2 {
   color: white;
-}
-
-.focus-content {
-  padding: 0 110px;
-  position: relative;
-  z-index: 2;
-  max-width: 600px;
+  font-size: 15px;
+  padding: 5px 10px;
+  border-radius: 3px;
+  display: inline-block;
+  margin-bottom: 10px;
+  font-weight: bold;
 }
 
 .content1 {
-  background-color: #19b11d;
-  color: white;
-  font-size: 15px;
-  padding: 5px 10px;
-  border-radius: 3px;
-  display: inline-block;
-  margin-bottom: 10px;
-  font-weight: bold;
+  background-color: var(--main-color-cus);
 }
 
 .content2 {
-  background-color: var(--gray-opa);
-  color: white;
-  font-size: 15px;
-  padding: 5px 10px;
-  border-radius: 3px;
-  display: inline-block;
-  margin-bottom: 10px;
-  font-weight: bold;
+  background-color: rgba(128, 128, 128, 0.8);
 }
 
 .focus-info {
@@ -83,7 +46,7 @@
 
 .focus-title {
   font-size: 20px;
-  margin: 20px 0;
+  margin: 5px 0;
   font-weight: bold;
 }
 
@@ -92,8 +55,10 @@
   margin-bottom: 20px;
   opacity: 0.9;
   line-height: 1.5;
-  height: 100px;
+  height: 8vh;
+  width: 30%;
   overflow: hidden;
+  text-align: left;
 }
 
 .focus-actions {
@@ -105,9 +70,8 @@
   font-size: 20px;
 }
 
-.play-button {
-  background-color: #19b11d;
-  color: white;
+.play-button,
+.save-button {
   border: none;
   padding: 20px;
   border-radius: 50%;
@@ -119,41 +83,74 @@
   justify-content: center;
 }
 
-.play-button:hover {
-  opacity: 0.6;
+.play-button {
+  background-color: var(--main-color-cus);
+  color: white;
 }
 
 .save-button {
   background-color: rgba(128, 128, 128, 0.6);
   color: black;
-  border: none;
-  padding: 20px;
-  border-radius: 50%;
-  width: 50px;
-  height: 50px;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
+.play-button:hover,
 .save-button:hover {
   opacity: 0.6;
 }
-@media (max-width:991px){
-  .focus{
-    height: 60vh;
+
+@media (max-width: 991px) {
+  .carousel-item img {
+    height: 40vh;
   }
 }
+
 @media (max-width: 767px) {
-  .focus{
-    margin-top: 10vh;
-    height: 50vh;
+  .carousel-item img {
+    height: 35vh;
+  }
+  .focus-description,
+  .focus-actions {
+    display: none;
+  }
+  .carousel-caption {
+    bottom: 5%;
+  }
+  .carousel-control-prev,
+  .carousel-control-next {
+    display: none;
   }
 }
+
 @media (max-width: 577px) {
-  .focus{
-    margin-top: 8vh;
-    height: 30vh;
+  .carousel-item img {
+    height: 33vh;
+  }
+  .content1,
+  .content2 {
+    font-size: 10px;
+    padding: 3px;
+  }
+  .focus-info {
+    font-size: 9px;
+  }
+  .focus-title {
+    font-size: 13px;
   }
 }
+
+
+
+
+@media (max-width: 991px) {
+  .dexuathot1 {
+  }
+}
+
+@media (max-width: 767px) {
+}
+
+@media (max-width: 577px) {
+}
+
+
+
