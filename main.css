@@ -70,10 +70,16 @@ section {
     height: 25vh;
     width: 24.39%;
   }
-  .toggle-p{
+  .toggle-p {
     cursor: pointer;
     text-decoration: underline;
-    color:#1864ab;
+    color: #1864ab;
+  }
+  .container-cus:not(.show-all) .item:nth-child(n + 5) {
+    display: none;
+  }
+  .container-cus.show-all {
+    display: flex;
   }
 }
 @media (max-width: 767px) {
@@ -83,9 +89,6 @@ section {
   }
   .container-cus:not(.show-all) .item:nth-child(n + 4) {
     display: none;
-  }
-  .container-cus.show-all{
-    display: flex;
   }
   .col {
     width: 32.96%;
@@ -99,7 +102,7 @@ section {
   .container-cus:not(.show-all) .item:nth-child(n + 3) {
     display: none;
   }
-  .col{
+  .col {
     width: 49%;
   }
 }

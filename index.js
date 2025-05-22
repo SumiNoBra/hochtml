@@ -228,7 +228,7 @@ renderDexuathot(chieurap, chieurapDiv);
 renderDexuathot(tinhcam, tinhcamDiv);
 function renderDexuathot(dexuathotdata, dexuathot) {
   dexuathot.innerHTML = "";
-  dexuathotdata.forEach((item, index) => {
+  dexuathotdata.forEach((item) => {
     dexuathot.innerHTML += `
     <div class="item col col-sm-6 col-md-4 col-lg-3">
       <div class="movie" style="background-image: url('${item.img}')">
@@ -244,3 +244,17 @@ function renderDexuathot(dexuathotdata, dexuathot) {
   `;
   });
 }
+
+const buttons = document.querySelectorAll(".toggle-p");
+console.log(buttons);
+buttons.forEach((button, index) => {
+  button.addEventListener("click", () => {
+    const key = button.dataset.key;
+    console.log(index + 1);
+    const container = document.querySelector(
+      `section[data-key="${index + 1}"] .container-cus`
+    );
+    container.classList.toggle("show-all");
+  });
+});
+

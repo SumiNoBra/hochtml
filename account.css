@@ -1,0 +1,90 @@
+.main {
+  height: 600px;
+  display: flex;
+}
+.sidebar-left {
+  width: 20%;
+  height: 100%;
+  background-color: RGB(18, 18, 26);
+  display: flex;
+  flex-direction: column;
+}
+.sidebar-right {
+  width: 80%;
+  height: 100%;
+  background-color: RGB(10, 12, 16);
+  display: flex;
+  flex-direction: column;
+  padding: 20px 20%;
+}
+.name {
+  height: 8vh;
+  width: 100%;
+  background-color: rgb(68, 108, 8);
+  display: flex;
+  align-items: center;
+  padding: 20px 10%;
+  gap: 10px;
+  font-weight: bold;
+  font-size: 13px;
+}
+.anhdaidien {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  border: 1px solid white;
+}
+.item {
+  cursor: pointer;
+  width: 100%;
+  padding: 10px 10% 0px;
+  display: flex;
+  align-items: center;
+  font-size: 13px;
+  font-weight: 500;
+}
+.nav-link:hover {
+  color: var(--main-color-cus);
+}
+.thongtin {
+  padding: 20px;
+  background-color: RGB(18, 18, 26);
+  font-size: 12px;
+}
+.tag-name {
+  color: gray;
+  font-size: 13px;
+}
+.editForm {
+  position: fixed;
+  display: none;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  color: black;
+  border: 1px solid #ccc;
+  padding: 20px;
+  z-index: 9999;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+.hien{
+  display: block;
+}
+.tag{
+  color: gray;
+  font-size: 13px;
+  margin: 0;
+}
+.ifWrong{
+  height: 16px;
+  font-size: 12px;
+}
+.wrong{
+  color: red;
+  border-color: red;
+}
+.correct{
+  color: green;
+  border-color: green;
+}
