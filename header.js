@@ -39,7 +39,6 @@ if (username == null) {
 const me = document.querySelector(".me");
 me.appendChild(acc);
 const dropdown_acc = document.querySelector(".dropdown-menu.acc");
-console.log(dropdown_acc);
 if (username == null) {
   dropdown_acc.innerHTML = `
     <li><a class="dropdown-item" href="#dangnhap">Đăng Nhập</a></li>
@@ -160,7 +159,33 @@ function formEmail() {
       <button class="btn btn-outline-success w-100" onclick="closeForm()">Hủy</button>
   `;
 }
-
+function formGtinh_Nsinh(){
+  return`
+      <p onclick="closeForm()" class="nav-link fs-6 text-black" style="cursor: pointer; text-align: right;">x</p>
+      <h5 class="text-center fs-6">Chỉnh sửa thông tin cá nhân</h5>
+      <div id="bietdanh" class="form-control mb-3">
+        <p class="tag">Nhập lại biệt danh</p>
+        <input type="text" class="form-control" />
+        <div class="ifWrong">
+        </div>
+      </div>
+      <div id="gtinh" class="form-control mb-3">
+        <p class="tag">Nhập lại giới tính</p>
+        <input type="text" class="form-control" />
+        <div class="ifWrong">
+        </div>
+      </div>
+      <div id="nsinh" class="form-control mb-3">
+        <p class="tag">Nhập lại ngày sinh</p>
+        <input type="text" class="form-control" />
+        <div class="ifWrong">
+        </div>
+      </div>
+      <br />
+      <button type="submit" class="btn btn-success w-100 mb-3" onclick="saveGtinh_Nsinh()">Lưu</button>
+      <button class="btn btn-outline-success w-100" onclick="closeForm()">Hủy</button>
+  `
+}
 document.querySelectorAll(".thongtin .nav-link").forEach((link) => {
   link.addEventListener("click", function (e) {
     const label = e.target.parentElement.querySelector("label").innerText;
@@ -173,6 +198,7 @@ document.querySelectorAll(".thongtin .nav-link").forEach((link) => {
     } else if (label == "Email") {
       editForm.item(0).innerHTML = formEmail();
     } else {
+      editForm.item(0).innerHTML = formGtinh_Nsinh();
     }
   });
 });
@@ -264,6 +290,10 @@ function saveEditEmail() {
     return;
   }
   user.email = document.querySelector(".editForm #new input").value;
+  notify();
+  closeForm();
+}
+function saveGtinh_Nsinh(){
   notify();
   closeForm();
 }

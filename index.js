@@ -246,11 +246,9 @@ function renderDexuathot(dexuathotdata, dexuathot) {
 }
 
 const buttons = document.querySelectorAll(".toggle-p");
-console.log(buttons);
 buttons.forEach((button, index) => {
   button.addEventListener("click", () => {
     const key = button.dataset.key;
-    console.log(index + 1);
     const container = document.querySelector(
       `section[data-key="${index + 1}"] .container-cus`
     );
