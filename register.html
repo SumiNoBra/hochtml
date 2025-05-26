@@ -1,0 +1,131 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title></title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <style>
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+      }
+      .main {
+        width: 30%;
+        background: linear-gradient(135deg, #f6d365 0%, #fda085 100%);
+        padding: 10px;
+        border-radius: 16px;
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+        justify-items: center;
+      }
+      .form-group {
+        margin: 10px 0;
+        width: 80%;
+      }
+      .form-group label {
+        margin-bottom: 5px;
+      }
+      .form-group button {
+        width: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <form id="form1" class="needs-validation">
+      <div class="container main">
+        <div class="form-group">
+          <button class="google">
+            <a class="nav-link d-flex justify-content-center">
+              <img
+                src="assents/gg.png"
+                alt="google-logo"
+                width="30"
+                height="30"
+              />
+              <span class="ms-2">Đăng nhập bằng Google</span>
+            </a>
+          </button>
+        </div>
+        <div class="form-group">
+          <label for="Email">Nhập Email</label>
+          <input
+            type="email"
+            name="Email"
+            id="Email"
+            class="form-control is-invalid"
+            placeholder="Nhập Email"
+          />
+        </div>
+        <div class="form-group">
+          <label for="SĐT">Nhập số điện thoại</label>
+          <input
+            type="tel"
+            name="SĐT"
+            id="SĐT"
+            class="form-control is-invalid"
+            placeholder="Nhập SĐT"
+          />
+          <div class="invalid-feedback">Vui lòng nhập SĐT hợp lệ!</div>
+        </div>
+        <div class="form-group">
+          <label for="Tài Khoản">Nhập tên Tài Khoản</label>
+          <input
+            type="text"
+            name="Tài Khoản"
+            id="Tài Khoản"
+            class="form-control is-invalid"
+            placeholder="Nhập tài khoản"
+          />
+          <div class="invalid-feedback">Bạn phải nhập tên tài khoản</div>
+        </div>
+        <div class="form-group">
+          <label for="Mật Khẩu">Mật Khẩu </label>
+          <input
+            type="password"
+            name="Mật khẩu"
+            id="Mật khẩu"
+            class="form-control is-valid"
+            placeholder="Nhập mật khẩu"
+          />
+          <div class="valid-feedback text-muted">
+            Mật khẩu phải có ký tự đặc biệt!
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="XN Mật Khẩu">Xác nhận Mật Khẩu </label>
+          <input
+            type="password"
+            name="Mật khẩu"
+            id="XN Mật khẩu"
+            class="form-control is-valid"
+            placeholder="Nhập lại mật khẩu"
+          />
+          <div class="valid-feedback text-muted">Nhập lại mật khẩu ở trên</div>
+        </div>
+        <div class="form-check form-group">
+          <input type="checkbox" id="check" class="form-check-input" />
+          <label for="check" class="form-check-label">
+            Xác nhận đã đọc những điều lệ của chúng tôi
+          </label>
+        </div>
+        <div class="form-group">
+          <button class="btn btn-primary btn-block" type="submit">
+            Xác Nhận
+          </button>
+        </div>
+      </div>
+    </form>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

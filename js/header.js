@@ -22,12 +22,11 @@ function logout() {
 const username = localStorage.getItem("username");
 
 const acc = document.createElement("div");
-localStorage.setItem("username", "Nguyễn Văn A");
 acc.className = "acc";
 if (username == null) {
   acc.innerHTML = `
-  <a href="#login" class="nav-link">Đăng Nhập</a>
-  <a href="#register" class="nav-link">Đăng Ký</a>
+  <a href="dangnhap.html" class="nav-link">Đăng Nhập</a>
+  <a href="dangky.html" class="nav-link">Đăng Ký</a>
   `;
 } else {
   acc.innerHTML = `
@@ -58,7 +57,6 @@ name_left.innerHTML = `
 const canhan1 = document.querySelector(".canhan1");
 canhan1.innerHTML = `
           <p class="tag-name">Thông tin cá nhân</p>
-
           <div class="thongtin d-flex gap-2 justify-content-between">
             <div class="d-flex gap-3">
               <div class="anhdaidien" style="height: 50px; width: 50px"></div>
