@@ -40,8 +40,8 @@ me.appendChild(acc);
 const dropdown_acc = document.querySelector(".dropdown-menu.acc");
 if (username == null) {
   dropdown_acc.innerHTML = `
-    <li><a class="dropdown-item" href="#dangnhap">Đăng Nhập</a></li>
-    <li><a class="dropdown-item" href="#dangky">Đăng Ký</a></li>
+    <li><a class="dropdown-item" href="dangnhap.html">Đăng Nhập</a></li>
+    <li><a class="dropdown-item" href="dangky.html">Đăng Ký</a></li>
   `;
 } else {
   dropdown_acc.innerHTML = `
@@ -157,8 +157,8 @@ function formEmail() {
       <button class="btn btn-outline-success w-100" onclick="closeForm()">Hủy</button>
   `;
 }
-function formGtinh_Nsinh(){
-  return`
+function formGtinh_Nsinh() {
+  return `
       <p onclick="closeForm()" class="nav-link fs-6 text-black" style="cursor: pointer; text-align: right;">x</p>
       <h5 class="text-center fs-6">Chỉnh sửa thông tin cá nhân</h5>
       <div id="bietdanh" class="form-control mb-3">
@@ -182,7 +182,7 @@ function formGtinh_Nsinh(){
       <br />
       <button type="submit" class="btn btn-success w-100 mb-3" onclick="saveGtinh_Nsinh()">Lưu</button>
       <button class="btn btn-outline-success w-100" onclick="closeForm()">Hủy</button>
-  `
+  `;
 }
 document.querySelectorAll(".thongtin .nav-link").forEach((link) => {
   link.addEventListener("click", function (e) {
@@ -291,7 +291,7 @@ function saveEditEmail() {
   notify();
   closeForm();
 }
-function saveGtinh_Nsinh(){
+function saveGtinh_Nsinh() {
   notify();
   closeForm();
 }
