@@ -1,35 +1,3 @@
-const focusDataArray = [
-  {
-    ImgUrl: "./assents/thousand-sunny-one-piece.jpg",
-    content1: "Đang phát sóng",
-    content2: "Top 1",
-    overrate: 9.9,
-    info: "Đạo diễn: Eiichiro Oda",
-    title: "One Piece [Thuyết Minh]",
-    description:
-      "One Piece (Đảo Hải Tặc) - Monkey D. Luffy và hành trình khám phá bí mật của kho báu One Piece, trở thành Vua Hải Tặc.",
-  },
-  {
-    ImgUrl: "./assents/SpiritedAway.avif",
-    content1: "Mới cập nhật",
-    content2: "Top 2",
-    overrate: 9.5,
-    info: "Đạo diễn: Hayao Miyazaki",
-    title: "Spirited Away",
-    description:
-      "Spirited Away - Câu chuyện về cô bé Chihiro lạc vào thế giới linh hồn và hành trình tìm đường trở về.",
-  },
-  {
-    ImgUrl: "./assents/yourname.png",
-    content1: "Hot nhất tuần",
-    content2: "Top 3",
-    overrate: 9.2,
-    info: "Đạo diễn: Makoto Shinkai",
-    title: "Your Name",
-    description:
-      "Your Name - Một câu chuyện tình yêu kỳ diệu giữa hai người xa lạ kết nối qua giấc mơ.",
-  },
-];
 const anime = [
   {
     name: "Solo Leveling",
@@ -67,7 +35,7 @@ const anime = [
       "Hành trình chinh phục các vùng đất và trở thành nhà huấn luyện Pokémon vĩ đại.",
   },
 ];
- 
+
 const thethao = [
   {
     name: "Haikyuu",
@@ -181,78 +149,50 @@ const tinhcam = [
       "Một chuyện tình nhẹ nhàng và đáng yêu giữa hai học sinh trung học tưởng chừng trái ngược.",
   },
 ];
-const carouselInner = document.querySelector(".carousel-inner");
-focusDataArray.forEach((item, index) => {
-  const carouselItem = document.createElement("div");
-  carouselItem.className =
-    index === 0 ? "carousel-item active" : "carousel-item";
-  carouselItem.setAttribute("data-bs-interval", "5000");
-  carouselItem.innerHTML = `
-    <img
-      src="${item.ImgUrl}"
-      class="d-block w-100"
-      alt="${item.title}"
-    />
-    <div class="carousel-caption d-inline">
-      <span class="content1">${item.content1}</span>
-      <span class="content2">${item.content2}</span>
-      <div class="focus-info">
-        <span class="over-rate"><i class="fa-solid fa-star"></i> ${item.overrate}</span>
-        <span>|</span>
-        <span>TV</span>
-        <span>|</span>
-        <span>${item.info}</span>
-      </div>
-      <h1 class="focus-title">${item.title}</h1>
-      <p class="focus-description">${item.description}</p>
-      <div class="focus-actions">
-        <button class="play-button">
-          <i class="fa-solid fa-play"></i>
-        </button>
-        <button class="save-button">
-          <i class="fa-regular fa-bookmark"></i>
-        </button>
-      </div>
-    </div>
-  `;
-  carouselInner.appendChild(carouselItem);
-});
-
-const animeDiv = document.querySelector(" #anime");
-const thethaoDiv = document.querySelector(" #thethao");
-const chieurapDiv = document.querySelector("  #chieurap");
-const tinhcamDiv = document.querySelector("  #tinhcam");
-renderDexuathot(anime, animeDiv);
-renderDexuathot(thethao, thethaoDiv);
-renderDexuathot(chieurap, chieurapDiv);
-renderDexuathot(tinhcam, tinhcamDiv);
-function renderDexuathot(dexuathotdata, dexuathot) {
-  dexuathot.innerHTML = "";
-  dexuathotdata.forEach((item) => {
-    dexuathot.innerHTML += `
-    <div class="item col">
-      <div class="movie" style="background-image: url('${item.img}')">
-        <p class="item-episodes">${item.episodes}</p>
-        <p class="movie-description">
-          <strong>${item.name}</strong><br />
-          ${item.episodes}<br />
-          ${item.description ? `<em>${item.description}</em>` : ""}
-        </p>
-      </div>
-      <p class="item-name">${item.name}</p>
-    </div>
-  `;
-  });
+const all = [...anime, ...thethao, ...chieurap, ...tinhcam];
+const kq = [];
+function boDauTiengViet(str) {
+  return str
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .replace(/đ/g, "d")
+    .replace(/Đ/g, "D");
 }
 
-const buttons = document.querySelectorAll(".toggle-p");
-buttons.forEach((button, index) => {
-  button.addEventListener("click", () => {
-    const key = button.parentElement.dataset.key;
-    const container = document.querySelector(
-      `section[data-key="${key}"] .container-cus`
-    );
-    container.classList.toggle("show-all");
-  });
-});
+const params = new URLSearchParams(window.location.search);
+const name = params.get("name").toString();
 
+all.filter((item) => {
+  if (
+    boDauTiengViet(item.name.toLowerCase()).includes(
+      boDauTiengViet(name).toLowerCase()
+    )
+  ) {
+    kq.push(item);
+  }
+});
+const kq_find = document.querySelector("#kq-find");
+if (kq.length == 0) {
+  kq_find.innerHTML = `<h2 class="text-center">Không tìm thấy kết quả nào cho "${name}"</h2>`;
+} else {
+  kq_find.innerHTML = "";
+  const items = document.createElement("div");
+  items.classList =
+    "container-cus row row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5 show-all";
+  kq.forEach((item) => {
+    items.innerHTML += `
+        <div class="item col">
+        <div class="movie" style="background-image: url('${item.img}')">
+        <p class="item-episodes">${item.episodes}</p>
+        <p class="movie-description">
+        <strong>${item.name}</strong><br />
+        ${item.episodes}<br />
+        ${item.description ? `<em>${item.description}</em>` : ""}
+        </p>
+        </div>
+        <p class="item-name">${item.name}</p>
+        </div>
+    `;
+  });
+  kq_find.appendChild(items);
+}

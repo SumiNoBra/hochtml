@@ -12,8 +12,8 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
     />
+    <link rel="stylesheet" href="css/main.css" />
     <link rel="stylesheet" href="css/header_footer.css" />
-    <link rel="stylesheet" href="css/account.css" />
   </head>
   <body>
     <nav
@@ -97,27 +97,7 @@
         </div>
       </div>
     </nav>
-
-    <div class="main">
-      <div class="sidebar-left nav">
-        <div class="name"></div>
-        <div class="item setting">
-          <i class="fa-solid fa-circle-user"></i>
-          <a href="account.html" class="nav-link">Cài đặt cá nhân</a>
-        </div>
-        <div class="item logout">
-          <i class="fa-solid fa-right-from-bracket"></i>
-          <a href="#" onclick="logout()" class="nav-link">Đăng xuất</a>
-        </div>
-      </div>
-      <div class="sidebar-right">
-        <h3 class="text-center">Cài đặt cá nhân</h3>
-
-        <div class="pb-4 canhan1"></div>
-        <div class="canhan2"></div>
-      </div>
-    </div>
-
+    <div class="container-fluid" id="kq-find"></div>
     <footer class="mt-0">
       <div class="container-fluid mx-4">
         <div class="row">
@@ -156,30 +136,8 @@
         </div>
       </div>
     </footer>
-    <div class="editForm" style="border-radius: 5px"></div>
-
-    <div class="position-fixed bottom-0 end-0 p-3" style="z-index: 100000">
-      <div
-        id="liveToast"
-        class="toast"
-        role="alert"
-        aria-live="assertive"
-        aria-atomic="true"
-      >
-        <div class="toast-header">
-          <strong class="me-auto">Thông báo</strong>
-          <button
-            type="button"
-            class="btn-close"
-            data-bs-dismiss="toast"
-            aria-label="Close"
-          ></button>
-        </div>
-        <div class="toast-body text-black bg-success">Thay đổi thành công!</div>
-      </div>
-    </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/find.js"></script>
     <script src="js/header.js"></script>
-    <script src="js/account.js"></script>
   </body>
 </html>

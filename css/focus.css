@@ -97,7 +97,11 @@
 .save-button:hover {
   opacity: 0.6;
 }
-
+@media (max-width: 1199px) {
+  .carousel-item img {
+    height: 80vh;
+  }
+}
 @media (max-width: 991px) {
   .carousel-item img {
     height: 40vh;
@@ -137,11 +141,3 @@
     font-size: 13px;
   }
 }
-
-
-
-
-
-
-
-

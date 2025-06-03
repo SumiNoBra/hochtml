@@ -3,8 +3,7 @@ section {
 }
 .col {
   height: 45vh;
-  width: 19.565253%;
-  margin: 5px 0 25px;
+  margin: 5px 0 35px;
 }
 #dexuathot h2 {
   font-size: 30px;
@@ -23,7 +22,7 @@ section {
 }
 
 .container-cus .movie:hover {
-  transform: scale(1.2);
+  transform: scale(1.05);
 }
 
 .container-cus .movie .item-episodes {
@@ -38,6 +37,7 @@ section {
   display: inline;
   font-size: 18px;
   font-weight: 500;
+  padding: 10px 0;
 }
 
 .container-cus .movie .movie-description {
@@ -68,14 +68,13 @@ section {
 @media (max-width: 991px) {
   .col {
     height: 25vh;
-    width: 24.39%;
   }
   .toggle-p {
     cursor: pointer;
     text-decoration: underline;
     color: #1864ab;
   }
-  .container-cus:not(.show-all) .item:nth-child(n + 5) {
+  .container-cus:not(.show-all) .item:nth-child(n + 4) {
     display: none;
   }
   .container-cus.show-all {
@@ -87,11 +86,8 @@ section {
     font-size: 22px;
     font-weight: bold;
   }
-  .container-cus:not(.show-all) .item:nth-child(n + 4) {
+  .container-cus:not(.show-all) .item:nth-child(n + 3) {
     display: none;
-  }
-  .col {
-    width: 32.96%;
   }
 }
 @media (max-width: 577px) {
@@ -99,10 +95,7 @@ section {
     font-size: 16px;
     font-weight: bold;
   }
-  .container-cus:not(.show-all) .item:nth-child(n + 3) {
+  .container-cus:not(.show-all) .item:nth-child(n + 2) {
     display: none;
-  }
-  .col {
-    width: 49%;
   }
 }
