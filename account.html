@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="css/header_footer.css" />
     <link rel="stylesheet" href="css/account.css" />
   </head>
-  <body>
+  <body style="display: flex; flex-direction: column; min-height: 100vh">
     <nav
       id="mainNavbar"
       class="navbar navbar-expand-md bg-cus fixed-top position-relative"
@@ -29,9 +29,6 @@
           type="button"
           data-bs-toggle="collapse"
           data-bs-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
         >
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -49,57 +46,47 @@
                 href="#"
                 role="button"
                 data-bs-toggle="dropdown"
-                aria-expanded="false"
               >
                 Thể loại
               </a>
               <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#">Hành động</a></li>
                 <li><a class="dropdown-item" href="#anime">Anime</a></li>
                 <li><a class="dropdown-item" href="#chieurap">Chiếu rạp</a></li>
                 <li><a class="dropdown-item" href="#thethao">Thể thao</a></li>
                 <li><a class="dropdown-item" href="#tinhcam">Tình cảm</a></li>
               </ul>
             </li>
-            <li class="nav-item dropdown d-block d-md-none">
-              <p
-                class="nav-link dropdown-toggle"
-                role="button"
-                data-bs-toggle="dropdown"
-                aria-expanded="false"
-              >
-                Của tôi
-              </p>
-              <ul class="dropdown-menu acc"></ul>
-            </li>
           </ul>
-          <div class="input-group mb-3 input-group-md">
-            <input
-              type="text"
-              class="form-control"
-              placeholder="Tìm kiếm"
-              id="find-input"
-            />
-            <span class="input-group-text" id="find-fa">
-              <i class="fa-solid fa-magnifying-glass"></i>
-            </span>
+          <div class="nav-item">
+            <div class="input-group mb-3 w-75">
+              <input
+                type="text"
+                class="form-control"
+                placeholder="Tìm kiếm"
+                id="find-input"
+              />
+              <span class="input-group-text" id="find-fa">
+                <i class="fa-solid fa-magnifying-glass"></i>
+              </span>
+            </div>
           </div>
-          <div class="me justify-content-center">
-            <button class="btn btn-cus">
-              <i class="fa-solid fa-circle-user fs-4 d-md-inline d-none"></i>
-              <p>Của tôi</p>
-            </button>
-            <!-- <div class="acc">
-              <a class="btn btn-outline-success mb-1">Đăng Ký</a>
-              <a class="btn btn-outline-success">Đăng Nhập</a>
-            </div> -->
+          <div class="nav-item dropdown text-md-center">
+            <i class="fa-solid fa-circle-user fs-4 d-md-inline d-none"></i>
+            <p
+              class="nav-link dropdown-toggle"
+              role="button"
+              data-bs-toggle="dropdown"
+            >
+              Của tôi
+            </p>
+            <ul class="dropdown-menu acc"></ul>
           </div>
         </div>
       </div>
     </nav>
 
     <div class="main">
-      <div class="sidebar-left nav">
+      <div class="sidebar-left">
         <div class="name"></div>
         <div class="item setting">
           <i class="fa-solid fa-circle-user"></i>

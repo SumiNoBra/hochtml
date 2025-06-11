@@ -7,6 +7,7 @@ function submitForm() {
     localStorage.setItem("username", "isvalid");
     location.href = "index.html";
   }
+  
   if (tkinput.value == "") {
     tkinput.classList.add("is-invalid");
     tk.querySelector(".feedback").classList.add("invalid-feedback");

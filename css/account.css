@@ -1,6 +1,8 @@
 .main {
   height: 600px;
   display: flex;
+  flex: 1;
+  height: 100%;
 }
 .sidebar-left {
   width: 20%;
@@ -15,7 +17,7 @@
   background-color: RGB(10, 12, 16);
   display: flex;
   flex-direction: column;
-  padding: 20px 20%;
+  padding: 20px 15%;
 }
 .name {
   height: 8vh;
@@ -29,8 +31,8 @@
   font-size: 13px;
 }
 .anhdaidien {
-  height: 40px;
-  width: 40px;
+  height: 50px;
+  width: 50px;
   border-radius: 50%;
   border: 1px solid white;
 }
@@ -42,6 +44,10 @@
   align-items: center;
   font-size: 13px;
   font-weight: 500;
+  gap: 5px;
+}
+.nav-link {
+  font-size: 16px;
 }
 .nav-link:hover {
   color: var(--main-color-cus);
@@ -50,6 +56,7 @@
   padding: 20px;
   background-color: RGB(18, 18, 26);
   font-size: 12px;
+  align-items: center;
 }
 .tag-name {
   color: gray;
@@ -68,23 +75,68 @@
   z-index: 9999;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
-.hien{
+.hien {
   display: block;
 }
-.tag{
+.tag {
   color: gray;
   font-size: 13px;
   margin: 0;
 }
-.ifWrong{
+.ifWrong {
   height: 16px;
   font-size: 12px;
 }
-.wrong{
+.wrong {
   color: red;
   border-color: red;
 }
-.correct{
+.correct {
   color: green;
   border-color: green;
+}
+
+@media (max-width: 991px) {
+  .sidebar-right {
+    padding: 20px 10%;
+  }
+  .anhdaidien {
+    width: 45px;
+    height: 45px;
+  }
+  .nav-link,
+  .item {
+    font-size: 14px;
+  }
+  p,
+  label {
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 767px) {
+  .sidebar-left {
+    display: none;
+  }
+  .sidebar-right {
+    width: 100%;
+  }
+}
+
+@media (max-width: 577px) {
+  .sidebar-right {
+    padding: 20px 5%;
+  }
+  .anhdaidien {
+    width: 40px;
+    height: 40px;
+  }
+  .nav-link,
+  .item {
+    font-size: 12px;
+  }
+  p,
+  label {
+    font-size: 14px;
+  }
 }

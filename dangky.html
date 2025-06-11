@@ -44,6 +44,11 @@
         font-weight: 600;
         font-size: 18px;
       }
+      @media (max-width: 991px) {
+        .main {
+          width: 50%;
+        }
+      }
       @media (max-width: 767px) {
         .main {
           width: 60%;
@@ -130,21 +135,15 @@
         </div>
       </div>
     </div>
+
     <div class="position-fixed bottom-0 end-0 p-3" style="z-index: 100000">
-      <div
-        id="liveToast"
-        class="toast"
-        role="alert"
-        aria-live="assertive"
-        aria-atomic="true"
-      >
+      <div id="liveToast" class="toast">
         <div class="toast-header">
           <strong class="me-auto">Thông báo</strong>
           <button
             type="button"
             class="btn-close"
             data-bs-dismiss="toast"
-            aria-label="Close"
           ></button>
         </div>
         <div class="toast-body text-black bg-success">Đăng ký thành công!</div>

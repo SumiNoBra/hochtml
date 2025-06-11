@@ -6,9 +6,10 @@ let user = {
   email: "",
   sdt: "",
 };
+
 const name_left = document.querySelector(".sidebar-left .name");
 name_left.innerHTML = `
-  <div class="anhdaidien"></div>\
+  <div class="anhdaidien"></div>
   <div class="name_left">
   ${user.name}
   </div>
@@ -17,8 +18,8 @@ const canhan1 = document.querySelector(".canhan1");
 canhan1.innerHTML = `
           <p class="tag-name">Thông tin cá nhân</p>
           <div class="thongtin d-flex gap-2 justify-content-between">
-            <div class="d-flex gap-3">
-              <div class="anhdaidien" style="height: 50px; width: 50px"></div>
+            <div class="d-flex gap-1">
+              <div class="anhdaidien"></div>
               <div class="d-flex flex-column">
                 <div id="name">${user.name}</div>
                 <div class="d-flex">
@@ -40,7 +41,7 @@ canhan2.innerHTML = `
             <div class="d-flex">
               <label class="text-secondary">Email</label>:
               <p id="email">${
-                user.email == 0 ? "Chưa được thiết lập" : user.email
+                user.email == "" ? "Chưa được thiết lập" : user.email
               }</p>
             </div>
             <a class="nav-link" href="#">Chỉnh sửa</a>
@@ -49,7 +50,7 @@ canhan2.innerHTML = `
             <div class="d-flex">
               <label class="text-secondary">Số điện thoại</label>:
               <p id="sdt">${
-                user.sdt == 0 ? "Chưa được thiết lập" : user.sdt
+                user.sdt == "" ? "Chưa được thiết lập" : user.sdt
               }</p>
             </div>
             <a class="nav-link" href="#">Chỉnh sửa</a>
@@ -58,7 +59,7 @@ canhan2.innerHTML = `
             <div class="d-flex">
               <label class="text-secondary">Password</label>:
               <p id="password">${
-                user.passWord == 0 ? "Chưa được thiết lập" : "******"
+                user.passWord == "" ? "Chưa được thiết lập" : "******"
               }</p>
             </div>
             <a class="nav-link" href="#">Chỉnh sửa</a>
@@ -69,18 +70,21 @@ function formPw() {
   return `
       <p onclick="closeForm()" class="nav-link fs-6 text-black" style="cursor: pointer; text-align: right;">x</p>
       <h5 class="text-center fs-6">Chỉnh sửa Password</h5>
+
       <div id="oldPassword" class="form-control mb-3">
         <p class="tag">Nhập lại mật khẩu cũ</p>
         <input type="password" class="form-control" />
         <div class="ifWrong">
         </div>
       </div>
+
       <div id="newPassword" class="form-control mb-3">
         <p class="tag">Nhập mật khẩu mới</p>
         <input type="password" class="form-control" />
         <div class="ifWrong">
         </div>
       </div>
+
       <div id="confirmPassword" class="form-control mb-3">
         <p class="tag">Nhập lại mật khẩu mới</p>
         <input type="password" class="form-control" />
@@ -152,16 +156,16 @@ function formGtinh_Nsinh() {
 document.querySelectorAll(".thongtin .nav-link").forEach((link) => {
   link.addEventListener("click", function (e) {
     const label = e.target.parentElement.querySelector("label").innerText;
-    const editForm = document.getElementsByClassName("editForm");
-    editForm.item(0).classList.add("hien");
+    const editForm = document.querySelector(".editForm");
+    editForm.classList.add("hien");
     if (label == "Password") {
-      editForm.item(0).innerHTML = formPw();
+      editForm.innerHTML = formPw();
     } else if (label == "Số điện thoại") {
-      editForm.item(0).innerHTML = formSdt();
+      editForm.innerHTML = formSdt();
     } else if (label == "Email") {
-      editForm.item(0).innerHTML = formEmail();
+      editForm.innerHTML = formEmail();
     } else {
-      editForm.item(0).innerHTML = formGtinh_Nsinh();
+      editForm.innerHTML = formGtinh_Nsinh();
     }
   });
 });

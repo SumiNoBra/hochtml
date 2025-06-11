@@ -149,31 +149,28 @@ const tinhcam = [
       "Một chuyện tình nhẹ nhàng và đáng yêu giữa hai học sinh trung học tưởng chừng trái ngược.",
   },
 ];
+
 const all = [...anime, ...thethao, ...chieurap, ...tinhcam];
 const kq = [];
-function boDauTiengViet(str) {
-  return str
-    .normalize("NFD")
-    .replace(/[\u0300-\u036f]/g, "")
-    .replace(/đ/g, "d")
-    .replace(/Đ/g, "D");
-}
+// function boDauTiengViet(str) {
+//   return str
+//     .normalize("NFD")
+//     .replace(/[\u0300-\u036f]/g, "")
+//     .replace(/đ/g, "d")
+//     .replace(/Đ/g, "D");
+// }
 
 const params = new URLSearchParams(window.location.search);
-const name = params.get("name").toString();
+const namee = params.get("name").toString();
 
 all.filter((item) => {
-  if (
-    boDauTiengViet(item.name.toLowerCase()).includes(
-      boDauTiengViet(name).toLowerCase()
-    )
-  ) {
+  if (item.name.toLowerCase().includes(namee.toLowerCase())) {
     kq.push(item);
   }
 });
 const kq_find = document.querySelector("#kq-find");
 if (kq.length == 0) {
-  kq_find.innerHTML = `<h2 class="text-center">Không tìm thấy kết quả nào cho "${name}"</h2>`;
+  kq_find.innerHTML = `<h2 class="text-center">Không tìm thấy kết quả nào cho "${namee}"</h2>`;
 } else {
   kq_find.innerHTML = "";
   const items = document.createElement("div");

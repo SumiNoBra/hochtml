@@ -5,18 +5,25 @@ function submitForm() {
   tkinput = tk.querySelector("input");
   mkinput = mk.querySelector("input");
   xnmkinput = xnmk.querySelector("input");
-  if (tkinput.value !== "" && mkinput.value !== "" && xnmkinput.value !== "") {
+  if (
+    tkinput.value !== "" &&
+    mkinput.value !== "" &&
+    xnmkinput.value !== "" &&
+    xnmkinput.value == mkinput.value
+  ) {
     var toastLiveExample = document.getElementById("liveToast");
     var toast = new bootstrap.Toast(toastLiveExample);
+    
     tkinput.value = "";
     mkinput.value = "";
     xnmkinput.value = "";
-    tkinput.classList="form-control";
-    mkinput.classList="form-control";
-    xnmkinput.classList="form-control";
+    tkinput.classList = "form-control";
+    mkinput.classList = "form-control";
+    xnmkinput.classList = "form-control";
     toast.show();
     return;
   }
+
   if (tkinput.value == "") {
     tkinput.classList.add("is-invalid");
     tk.querySelector(".feedback").classList.add("invalid-feedback");
@@ -53,5 +60,5 @@ function submitForm() {
     xnmk.querySelector(".feedback").innerText = "";
   }
 
-  return ;
+  return;
 }

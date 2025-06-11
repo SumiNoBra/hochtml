@@ -67,7 +67,7 @@ const anime = [
       "Hành trình chinh phục các vùng đất và trở thành nhà huấn luyện Pokémon vĩ đại.",
   },
 ];
- 
+
 const thethao = [
   {
     name: "Haikyuu",
@@ -226,6 +226,7 @@ renderDexuathot(anime, animeDiv);
 renderDexuathot(thethao, thethaoDiv);
 renderDexuathot(chieurap, chieurapDiv);
 renderDexuathot(tinhcam, tinhcamDiv);
+
 function renderDexuathot(dexuathotdata, dexuathot) {
   dexuathot.innerHTML = "";
   dexuathotdata.forEach((item) => {
@@ -246,13 +247,9 @@ function renderDexuathot(dexuathotdata, dexuathot) {
 }
 
 const buttons = document.querySelectorAll(".toggle-p");
-buttons.forEach((button, index) => {
+buttons.forEach((button) => {
   button.addEventListener("click", () => {
-    const key = button.parentElement.dataset.key;
-    const container = document.querySelector(
-      `section[data-key="${key}"] .container-cus`
-    );
-    container.classList.toggle("show-all");
+    const containers = button.parentElement.querySelector(".container-cus");
+    containers.classList.toggle("show-all");
   });
 });
-
