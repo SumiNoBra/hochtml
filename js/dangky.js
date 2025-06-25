@@ -9,11 +9,12 @@ function submitForm() {
     tkinput.value !== "" &&
     mkinput.value !== "" &&
     xnmkinput.value !== "" &&
-    xnmkinput.value == mkinput.value
+    xnmkinput.value == mkinput.value &&
+    tkinput.value.includes("@")
   ) {
     var toastLiveExample = document.getElementById("liveToast");
     var toast = new bootstrap.Toast(toastLiveExample);
-    
+
     tkinput.value = "";
     mkinput.value = "";
     xnmkinput.value = "";

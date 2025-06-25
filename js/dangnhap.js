@@ -1,13 +1,17 @@
+let user = {
+  Gtinh: "Nam",
+  Ngaysinh: "2000-01-01",
+  name: "Nguyễn Văn A",
+  passWord: "123456",
+  email: "",
+  sdt: "",
+};
 tk = document.querySelector("#tk");
 mk = document.querySelector("#mk");
 function submitForm() {
   tkinput = tk.querySelector("input");
   mkinput = mk.querySelector("input");
-  if (tkinput.value !== "" && mkinput.value !== "") {
-    localStorage.setItem("username", "isvalid");
-    location.href = "index.html";
-  }
-  
+
   if (tkinput.value == "") {
     tkinput.classList.add("is-invalid");
     tk.querySelector(".feedback").classList.add("invalid-feedback");
@@ -30,6 +34,13 @@ function submitForm() {
     mkinput.classList.add("is-valid");
     mk.querySelector(".feedback").innerText = "";
   }
-
+  if (
+    tkinput.value !== "" &&
+    mkinput.value !== "" &&
+    tkinput.value.includes("@")
+  ) {
+    localStorage.setItem("username", JSON.stringify(user));
+    location.href = "index.html";
+  }
   return true;
 }

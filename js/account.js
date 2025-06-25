@@ -1,11 +1,4 @@
-let user = {
-  Gtinh: "Nam",
-  Ngaysinh: "2000-01-01",
-  name: "Nguyễn Văn A",
-  passWord: "123456",
-  email: "",
-  sdt: "",
-};
+const user = JSON.parse(localStorage.getItem("username"));
 
 const name_left = document.querySelector(".sidebar-left .name");
 name_left.innerHTML = `
@@ -138,7 +131,10 @@ function formGtinh_Nsinh() {
       </div>
       <div id="newgtinh" class="form-control mb-3">
         <p class="tag">Nhập lại giới tính</p>
-        <input type="text" class="form-control" />
+        <select class="form-select" aria-label="Default select example">
+          <option value="Nam" >Nam</option>
+          <option value="Nữ">Nữ</option>
+        </select>
         <div class="ifWrong">
         </div>
       </div>
@@ -210,21 +206,23 @@ function saveEditPW() {
     oldPass.querySelector("input").value !== user.passWord
   ) {
     oldPass.querySelector(".ifWrong").innerText = "Mật khẩu cũ không đúng";
-    oldPass.querySelector(".ifWrong").classList.add("wrong");
-    oldPass.querySelector("input").classList.add("wrong");
-    oldPass.querySelector(".tag").classList.add("wrong");
+    oldPass.querySelector(".ifWrong").classList = "ifWrong wrong";
+    oldPass.querySelector("input").classList = "form-control wrong";
+    oldPass.querySelector(".tag").classList = "tag wrong";
     checked = false;
   } else {
     oldPass.querySelector(".ifWrong").innerText = "";
-    oldPass.querySelector(".ifWrong").classList.add("correct");
-    oldPass.querySelector("input").classList.add("correct");
-    oldPass.querySelector(".tag").classList.add("correct");
+    oldPass.querySelector(".ifWrong").classList = "ifWrong correct";
+    oldPass.querySelector("input").classList = "form-control correct";
+    oldPass.querySelector(".tag").classList = "tag correct";
   }
   if (!checked) {
     return;
   }
   user.passWord = newPass.querySelector("input").value;
   notify();
+  localStorage.removeItem("username");
+  localStorage.setItem("username", JSON.stringify(user));
   closeForm();
 }
 
@@ -242,6 +240,8 @@ function saveEditSdt() {
   }
   user.sdt = document.querySelector(".editForm input").value;
   document.querySelector("#sdt").innerText = user.sdt;
+  localStorage.removeItem("username");
+  localStorage.setItem("username", JSON.stringify(user));
   notify();
   closeForm();
 }
@@ -259,27 +259,30 @@ function saveEditEmail() {
   }
   user.email = document.querySelector(".editForm #new input").value;
   document.querySelector("#email").innerText = user.email;
+  localStorage.removeItem("username");
+  localStorage.setItem("username", JSON.stringify(user));
   notify();
   closeForm();
 }
 function saveGtinh_Nsinh() {
-  const bietdanh = document.querySelector(".editForm #newName");
-  const gtinh = document.querySelector(".editForm #newgtinh");
-  const nsinh = document.querySelector(".editForm #newnsinh");
-  user.name = bietdanh.querySelector("input").value;
-  user.Gtinh = gtinh.querySelector("input").value;
-  user.Ngaysinh = nsinh.querySelector("input").value;
+  let name = document.querySelector(".editForm #newName input").value;
+  let Gtinh = document.querySelector(" .editForm #newgtinh select").value;
+  let Ngaysinh = document.querySelector(" .editForm #newnsinh input").value;
+  if (name !== "") {
+    document.querySelector("#name").innerText = name;
+    name_left.querySelector(".name_left").innerText = name;
+    user.name = name;
+  }
+  document.querySelector("#gtinh").innerText = Gtinh;
+  user.Gtinh = Gtinh;
 
-  user.name == ""
-    ? null
-    : ((document.querySelector("#name").innerText = user.name),
-      (name_left.querySelector(".name_left").innerText = user.name));
-  user.Gtinh == ""
-    ? null
-    : (document.querySelector("#gtinh").innerText = user.Gtinh);
-  user.Ngaysinh == ""
-    ? null
-    : (document.querySelector("#ngaysinh").innerText = user.Ngaysinh);
+  if (Ngaysinh != "") {
+    document.querySelector("#ngaysinh").innerText = Ngaysinh;
+    user.Ngaysinh = Ngaysinh;
+  }
+
+  localStorage.removeItem("username");
+  localStorage.setItem("username", JSON.stringify(user));
   notify();
   closeForm();
 }

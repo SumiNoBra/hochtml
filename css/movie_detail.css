@@ -1,0 +1,99 @@
+p {
+  margin: 0;
+}
+.movie-detail-container {
+  padding-top: 80px;
+  padding-bottom: 20px;
+  font-size: 16px;
+}
+#movie-title {
+  font-size: 30px;
+}
+
+.movie-poster {
+  width: 100%;
+  height: 30vh;
+  border-radius: 8px;
+}
+
+.comments-section {
+  margin-top: 40px;
+  border-top: 1px solid #ddd;
+  height: 100%;
+  
+}
+#comment-form {
+  width: 100%;
+  padding-bottom: 20px;
+  border-bottom: 1px solid white;
+}
+.anhdaidien {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  border: 1px solid white;
+}
+#comment-form .input-group {
+  width: 100%;
+  height: 100%;
+}
+.comment {
+  border: 1px solid #eee;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+}
+
+.comment-author {
+  font-weight: bold;
+}
+.comment-input-area {
+  margin-top: 20px;
+}
+p {
+  margin: 0;
+}
+@media (max-width: 991px) {
+  .movie-poster {
+    height: 25vh;
+  }
+  .movie-detail-container {
+    font-size: 14px;
+  }
+  #movie-title {
+    font-size: 30px;
+  }
+}
+
+@media (max-width: 767px) {
+  .movie-poster {
+    height: 25vh;
+  }
+  .anhdaidien {
+    height: 40px;
+    width: 40px;
+  }
+  #movie-title {
+    font-size: 27px;
+  }
+}
+
+@media (max-width: 577px) {
+  .movie-poster {
+    height: 25vh;
+  }
+  .anhdaidien {
+    height: 37px;
+    width: 37px;
+  }
+  .movie-detail-container {
+    font-size: 14px;
+  }
+  #movie-title {
+    font-size: 25px;
+  }
+  #comment-form .btn {
+    font-size: 16px;
+  }
+}
